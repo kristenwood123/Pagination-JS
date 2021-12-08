@@ -1,7 +1,6 @@
+const displayButtons = (container, pages, activeIndex) => {
 
-
-const displayButtons = () => {
-console.log('hello')
 }
 
 export default displayButtons
+
