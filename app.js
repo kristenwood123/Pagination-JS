@@ -16,10 +16,17 @@ const setupUI = () => {
 
 const init = async () => {
   const followers = await fetchFollowers()
-  displayFollowers(paginate(followers)[0])
   title.textContent = 'pagination'
   pages = paginate(followers)
   setupUI()
 }
+
+btnContainer.addEventListener('click', function(e) {
+  if(e.target.classList.contains('btn-container')) return
+  if(e.target.classList.contains('page-btn')) {
+    index = parseInt(e.target.dataset.index)
+  }
+  setupUI()
+})
 
 window.addEventListener('load', init)
